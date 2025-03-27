@@ -89,7 +89,7 @@ def create_database_if_not_exists(db_name):
     assert db_name != "postgres", "Cannot use the default PostgreSQL database"
 
     # Connect to the PostgreSQL server
-    conn = psycopg2.connect("dbname=postgres")
+    conn = psycopg2.connect(dbname="postgres", user="postgres", password="")
     conn.autocommit = True
     cursor = conn.cursor()
     
